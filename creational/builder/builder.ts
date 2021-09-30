@@ -40,13 +40,18 @@ class PizzaBuilder {
     this.pizza.mushrooms = haveMushrooms;
     return this;
   }
+
+  build() {
+    return this.pizza;
+  }
 }
 
-const pepperoni = new PizzaBuilder('Pepperoni');
-pepperoni.addCheese('mozzarella');
+const pepperoni = new PizzaBuilder('Pepperoni').addCheese('mozzarella').build();
 
-const margherita = new PizzaBuilder('Margherita');
-margherita.addHam('bacon').addMushrooms(true);
+const margherita = new PizzaBuilder('Margherita')
+  .addHam('bacon')
+  .addMushrooms(true)
+  .build();
 
 console.log(margherita);
 console.log(pepperoni);
