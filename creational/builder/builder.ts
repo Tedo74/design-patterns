@@ -18,7 +18,7 @@ class Car {
   }
 }
 
-class carBuilder {
+class CarBuilder {
   car: Car;
   constructor(model: string) {
     this.car = new Car(model);
@@ -30,12 +30,16 @@ class carBuilder {
     return this;
   }
 
-  addMusic() {
+  addMusic(player: string) {
     this.car.music = 'radio';
     return this;
   }
 }
 
-const toyota = new carBuilder('toyota');
-toyota.addMusic().setTyres(4);
+const toyota = new CarBuilder('toyota');
+toyota.addMusic('radio').setTyres(4);
 console.log(toyota);
+
+const bmw = new CarBuilder('BMW');
+bmw.addMusic('CD');
+console.log(bmw);
