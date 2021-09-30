@@ -9,37 +9,44 @@ mentation when you need to build various representations of
 the product. For example, walls of a cabin may be built of
 wood, but the castle walls must be built with stone.*/
 
-class Car {
-  model: string;
-  tyres?: number;
-  music?: string;
-  constructor(model: string) {
-    this.model = model;
+class Pizza {
+  type: string;
+  cheese?: string;
+  ham?: string;
+  mushrooms?: boolean;
+  constructor(type: string) {
+    this.type = type;
   }
 }
 
-class CarBuilder {
-  car: Car;
-  constructor(model: string) {
-    this.car = new Car(model);
+class PizzaBuilder {
+  pizza: Pizza;
+  constructor(type: string) {
+    this.pizza = new Pizza(type);
   }
 
-  setTyres(tyresNumber: number) {
-    this.car.tyres = tyresNumber;
+  addCheese(cheese: string) {
+    this.pizza.cheese = cheese;
     // chain
     return this;
   }
 
-  addMusic(player: string) {
-    this.car.music = 'radio';
+  addHam(ham: string) {
+    this.pizza.ham = ham;
+    return this;
+  }
+
+  addMushrooms(haveMushrooms: boolean) {
+    this.pizza.mushrooms = haveMushrooms;
     return this;
   }
 }
 
-const toyota = new CarBuilder('toyota');
-toyota.addMusic('radio').setTyres(4);
-console.log(toyota);
+const pepperoni = new PizzaBuilder('Pepperoni');
+pepperoni.addCheese('mozzarella');
 
-const bmw = new CarBuilder('BMW');
-bmw.addMusic('CD');
-console.log(bmw);
+const margherita = new PizzaBuilder('Margherita');
+margherita.addHam('bacon').addMushrooms(true);
+
+console.log(margherita);
+console.log(pepperoni);
