@@ -14,15 +14,15 @@ class Food implements IProduct {
   price = 2;
 }
 
-class Car implements IProduct {
+class Bike implements IProduct {
   //   product: string;
   //   price: number;
   //   constructor() {
   //     this.product = 'Toyota';
   //     this.price = 20000;
   //   }
-  product = 'Toyota';
-  price = 20000;
+  product = 'BMX';
+  price = 1000;
 }
 
 class Book implements IProduct {
@@ -38,10 +38,10 @@ class Factory {
   static returnProduct(price: number): IProduct {
     if (price < 5) {
       return new Food();
-    } else if (price < 20000) {
+    } else if (price < 1000) {
       return new Book();
     } else {
-      return new Car();
+      return new Bike();
     }
   }
 }
