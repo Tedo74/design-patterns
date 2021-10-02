@@ -15,22 +15,15 @@ class BaseCar {
 class AdvancedCar {
     constructor(car) {
         this.decoratedCar = car;
-        this.decoratedCar.hp = this.tuning(120);
-    }
-    tuning(hp) {
-        return hp;
-    }
-    getHP() {
-        console.log('power: ' + this.decoratedCar.hp + ' hp.');
     }
     getDescription() {
-        console.log('description: ' + this.decoratedCar.description);
+        let description = '==============decoration=========================' + '\n';
+        description += this.decoratedCar.getDescription() + ' decorated' + '\n';
+        description += '==============decoration=========================' + '\n';
+        return description;
     }
 }
 const car = new BaseCar('Ford');
-console.log(car);
-// add features
+console.log(car.getDescription());
 const advCar = new AdvancedCar(car);
-console.log(advCar);
-advCar.getHP();
-advCar.getDescription();
+console.log(advCar.getDescription());

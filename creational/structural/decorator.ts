@@ -6,12 +6,11 @@ special wrapper objects that contain the behaviors.
 
 // Ads extensibility without modifying original object.
 
-interface IAdvancedCar {
-  description: string;
-  hp?: number;
+interface ICar {
+  getDescription(): string;
 }
 
-class BaseCar {
+class BaseCar implements ICar {
   description: string;
   constructor(description: string) {
     this.description = description;
@@ -21,31 +20,21 @@ class BaseCar {
   }
 }
 
-class AdvancedCar {
-  decoratedCar: IAdvancedCar;
+class AdvancedCar implements ICar {
+  decoratedCar: ICar;
   constructor(car: BaseCar) {
     this.decoratedCar = car;
-    this.decoratedCar.hp = this.tuning(120);
   }
-
-  tuning(hp: number): number {
-    return hp;
-  }
-
-  getHP() {
-    console.log('power: ' + this.decoratedCar.hp + ' hp.');
-  }
-
-  getDescription() {
-    console.log('description: ' + this.decoratedCar.description);
+  getDescription(): string {
+    let description =
+      '==============decoration=========================' + '\n';
+    description += this.decoratedCar.getDescription() + ' decorated' + '\n';
+    description += '==============decoration=========================' + '\n';
+    return description;
   }
 }
 
 const car = new BaseCar('Ford');
-console.log(car);
-
-// add features
+console.log(car.getDescription());
 const advCar = new AdvancedCar(car);
-console.log(advCar);
-advCar.getHP();
-advCar.getDescription();
+console.log(advCar.getDescription());
