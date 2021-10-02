@@ -4,34 +4,18 @@ interface IProduct {
 }
 
 class Food implements IProduct {
-  //   product: string;
-  //   price: number;
-  //   constructor() {
-  //     this.product = 'Chocolate';
-  //     this.price = 2;
-  //   }
   product = 'Chocolate';
   price = 2;
 }
 
 class Bike implements IProduct {
-  //   product: string;
-  //   price: number;
-  //   constructor() {
-  //     this.product = 'Toyota';
-  //     this.price = 20000;
-  //   }
   product = 'BMX';
   price = 1000;
 }
 
 class Book implements IProduct {
-  public product: string;
-  public price: number;
-  constructor() {
-    this.product = 'BestBook';
-    this.price = 5;
-  }
+  public product: string = 'Best book';
+  public price: number = 5;
 }
 
 class Factory {

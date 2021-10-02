@@ -4,11 +4,6 @@
 that are necessary for producing a particular
 configuration of an object.*/
 
-/*Some of the construction steps might require different imple-
-mentation when you need to build various representations of
-the product. For example, walls of a cabin may be built of
-wood, but the castle walls must be built with stone.*/
-
 class Pizza {
   type: string;
   cheese?: string;
