@@ -1,4 +1,5 @@
 "use strict";
+// class has only one instance
 class Singleton {
     constructor(id) {
         this.id = id;

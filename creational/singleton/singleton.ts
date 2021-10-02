@@ -1,3 +1,5 @@
+// class has only one instance
+
 class Singleton {
   static instance: Singleton;
   id: number;
