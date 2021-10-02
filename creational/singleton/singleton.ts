@@ -1,23 +1,19 @@
-class Single {
-  constructor() {
-    console.log('I am only one');
-  }
-}
-
 class Singleton {
-  static hasInstance = false;
-  single: Single | undefined;
-  constructor() {
-    if (!Singleton.hasInstance) {
-      this.single = new Single();
-      Singleton.hasInstance = true;
-    }
-  }
+  static instance: Singleton;
+  id: number;
 
-  getSingle() {
-    return this.single;
+  constructor(id: number) {
+    this.id = id;
+    if (Singleton.instance) {
+      return Singleton.instance;
+    }
+    Singleton.instance = this;
   }
 }
 
-let s1 = new Singleton().getSingle();
-let s2 = new Singleton().getSingle();
+const OBJECT1 = new Singleton(1); // setting its id property to 1
+const OBJECT2 = new Singleton(2); // setting its id property to 2
+
+console.log(OBJECT1 === OBJECT2); // = true
+console.log(OBJECT1.id); // returns 1
+console.log(OBJECT2.id); // returns 1 !!!
