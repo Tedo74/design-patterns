@@ -6,7 +6,7 @@ class Single {
 
 class Singleton {
   static hasInstance = false;
-  single: Single;
+  single: Single | undefined;
   constructor() {
     if (!Singleton.hasInstance) {
       this.single = new Single();
