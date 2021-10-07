@@ -74,7 +74,7 @@ interface IComputer {
 }
 
 class MainFactory {
-  static assemble(platform: string): IComputer | undefined {
+  static assemble(platform: string): IComputer | null {
     if (platform === 'AMD') {
       const amdFactory = new AmdFactory();
       const cpu = amdFactory.getCpu();
@@ -86,10 +86,11 @@ class MainFactory {
       const motherboard = intelFactory.getMotherboard();
       return { cpu, motherboard };
     } else {
-      return undefined;
+      return null;
     }
   }
 }
 
 console.log(MainFactory.assemble('AMD'));
 console.log(MainFactory.assemble('Intel'));
+// console.log(MainFactory.assemble('Other'));

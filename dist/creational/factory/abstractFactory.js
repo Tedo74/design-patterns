@@ -55,9 +55,10 @@ class MainFactory {
             return { cpu, motherboard };
         }
         else {
-            return undefined;
+            return null;
         }
     }
 }
 console.log(MainFactory.assemble('AMD'));
 console.log(MainFactory.assemble('Intel'));
+// console.log(MainFactory.assemble('Other'));
