@@ -12,7 +12,7 @@ class AsusDarkHero implements IMotherboard {
   mbName: string;
   platform: string;
   constructor() {
-    this.mbName = 'AsusDarkHero';
+    this.mbName = 'Asus Dark Hero';
     this.platform = 'AMD';
   }
 }
@@ -21,7 +21,7 @@ class MsiMeg implements IMotherboard {
   mbName: string;
   platform: string;
   constructor() {
-    this.mbName = 'MsiMeg';
+    this.mbName = 'Msi Meg';
     this.platform = 'Intel';
   }
 }

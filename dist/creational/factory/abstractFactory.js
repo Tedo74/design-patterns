@@ -1,13 +1,13 @@
 "use strict";
 class AsusDarkHero {
     constructor() {
-        this.mbName = 'AsusDarkHero';
+        this.mbName = 'Asus Dark Hero';
         this.platform = 'AMD';
     }
 }
 class MsiMeg {
     constructor() {
-        this.mbName = 'MsiMeg';
+        this.mbName = 'Msi Meg';
         this.platform = 'Intel';
     }
 }
