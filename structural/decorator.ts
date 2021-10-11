@@ -64,11 +64,11 @@ class Affogato extends CondimentDecorator {
     return this.beverage.coast() + 1.5;
   }
 }
-const expresso = new Espresso('italian espresso');
-console.log('order: ' + expresso.getDescription());
-console.log('price ' + expresso.coast());
+const espresso = new Espresso('italian espresso');
+console.log('order: ' + espresso.getDescription());
+console.log('price ' + espresso.coast());
 
-const milkEspresso = new Milk(expresso);
+const milkEspresso = new Milk(espresso);
 console.log('order: ' + milkEspresso.getDescription());
 console.log('price ' + milkEspresso.coast());
 
