@@ -1,29 +1,67 @@
 "use strict";
 /*
-Lets you attach
-new behaviors to objects by placing these objects inside
+Attach new behaviors to objects by placing these objects inside
 special wrapper objects that contain the behaviors.
 */
-class BaseCar {
-    constructor(description) {
-        this.description = description;
+// Ads extensibility without modifying original object.
+class Beverage {
+    constructor() {
+        this.description = 'some';
     }
     getDescription() {
         return this.description;
     }
 }
-class AdvancedCar {
-    constructor(car) {
-        this.decoratedCar = car;
+class Espresso extends Beverage {
+    constructor(description) {
+        super();
+        this.description = 'Espresso';
+        this.description = description;
     }
-    getDescription() {
-        let description = '==============decoration=========================' + '\n';
-        description += this.decoratedCar.getDescription() + ' decorated' + '\n';
-        description += '==============decoration=========================' + '\n';
-        return description;
+    coast() {
+        return 2;
     }
 }
-const car = new BaseCar('Ford');
-console.log(car.getDescription());
-const advCar = new AdvancedCar(car);
-console.log(advCar.getDescription());
+// decorator
+class CondimentDecorator extends Beverage {
+    constructor(beverage) {
+        super();
+        this.beverage = beverage;
+        this.description = beverage.description;
+    }
+}
+class Milk extends CondimentDecorator {
+    constructor(beverage) {
+        super(beverage);
+        this.description += ' with milk';
+        this.beverage.description = this.description;
+    }
+    getDescription() {
+        return this.beverage.description;
+    }
+    coast() {
+        return this.beverage.coast() + 0.3;
+    }
+}
+class Affogato extends CondimentDecorator {
+    constructor(beverage) {
+        super(beverage);
+        this.description += ' with ice cream';
+        this.beverage.description = this.description;
+    }
+    getDescription() {
+        return this.beverage.description;
+    }
+    coast() {
+        return this.beverage.coast() + 1.5;
+    }
+}
+const expresso = new Espresso('italian espresso');
+console.log('order: ' + expresso.getDescription());
+console.log('price ' + expresso.coast());
+const milkEspresso = new Milk(expresso);
+console.log('order: ' + milkEspresso.getDescription());
+console.log('price ' + milkEspresso.coast());
+const milkEspressoWithIceCream = new Affogato(milkEspresso);
+console.log('order: ' + milkEspressoWithIceCream.getDescription());
+console.log('price ' + milkEspressoWithIceCream.coast());
