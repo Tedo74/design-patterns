@@ -15,7 +15,6 @@ class Beverage {
 class Espresso extends Beverage {
     constructor(description) {
         super();
-        this.description = 'Espresso';
         this.description = description;
     }
     coast() {
@@ -27,17 +26,14 @@ class CondimentDecorator extends Beverage {
     constructor(beverage) {
         super();
         this.beverage = beverage;
-        this.description = beverage.description;
     }
 }
 class Milk extends CondimentDecorator {
     constructor(beverage) {
         super(beverage);
-        this.description += ' with milk';
-        this.beverage.description = this.description;
     }
     getDescription() {
-        return this.beverage.description;
+        return this.beverage.getDescription() + ' with milk';
     }
     coast() {
         return this.beverage.coast() + 0.3;
@@ -46,11 +42,9 @@ class Milk extends CondimentDecorator {
 class Affogato extends CondimentDecorator {
     constructor(beverage) {
         super(beverage);
-        this.description += ' with ice cream';
-        this.beverage.description = this.description;
     }
     getDescription() {
-        return this.beverage.description;
+        return this.beverage.getDescription() + ' with ice cream';
     }
     coast() {
         return this.beverage.coast() + 1.5;
@@ -65,3 +59,4 @@ console.log('price ' + milkEspresso.coast());
 const milkEspressoWithIceCream = new Affogato(milkEspresso);
 console.log('order: ' + milkEspressoWithIceCream.getDescription());
 console.log('price ' + milkEspressoWithIceCream.coast());
+//# sourceMappingURL=decorator.js.map

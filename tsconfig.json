@@ -5,7 +5,8 @@
     "module": "esnext",
     "outDir": "./dist",
     "rootDir": "./",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "sourceMap": true
   },
   "include": ["**/*.ts"]
 }

@@ -40,3 +40,4 @@ class User {
 const newspaper = new Publisher();
 const userReader = new User(newspaper, 'Pesho');
 const userReader2 = new User(newspaper, 'Gosho');
+//# sourceMappingURL=observer.js.map

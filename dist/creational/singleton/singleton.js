@@ -14,3 +14,4 @@ const OBJECT2 = new Singleton(2); // setting its id property to 2
 console.log(OBJECT1 === OBJECT2); // = true
 console.log(OBJECT1.id); // returns 1
 console.log(OBJECT2.id); // returns 1 !!!
+//# sourceMappingURL=singleton.js.map

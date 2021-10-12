@@ -62,3 +62,4 @@ class MainFactory {
 console.log(MainFactory.assemble('AMD'));
 console.log(MainFactory.assemble('Intel'));
 // console.log(MainFactory.assemble('Other'));
+//# sourceMappingURL=abstractFactory.js.map

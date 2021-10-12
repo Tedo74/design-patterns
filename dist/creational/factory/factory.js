@@ -33,3 +33,4 @@ class Factory {
 console.log(Factory.returnProduct(2));
 console.log(Factory.returnProduct(22000));
 console.log(Factory.returnProduct(101));
+//# sourceMappingURL=factory.js.map

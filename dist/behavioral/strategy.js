@@ -31,3 +31,4 @@ samurai.weapon = bow;
 samurai.attack();
 samurai.weapon = sword;
 samurai.attack();
+//# sourceMappingURL=strategy.js.map
