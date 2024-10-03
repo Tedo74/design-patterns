@@ -36,3 +36,5 @@ class ShoppingCart {
 const cart = new ShoppingCart(new PayPal());
 cart.addToCart(150);
 cart.checkOut();
+cart.addToCart(350);
+cart.checkOut();
