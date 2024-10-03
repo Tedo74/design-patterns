@@ -25,8 +25,6 @@ class ShoppingCart {
         this.amount = 0;
     }
 }
-
-
 const cart = new ShoppingCart(new PayPal());
 cart.addToCart(150);
 cart.checkOut();
